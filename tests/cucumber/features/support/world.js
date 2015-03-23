@@ -7,6 +7,7 @@ module.exports = function() {
     // set the app URL
     world.mirrorUrl = Package['xolvio:cucumber'].cucumber.mirror.rootUrl;
 
+    // use PhantomJS
     Package['xolvio:webdriver'].wdio.getGhostDriver(function(browser) {
       world.browser = browser;
       browser.call(callback);

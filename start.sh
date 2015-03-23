@@ -1,5 +1,6 @@
 #!/bin/sh
 #export JASMINE_BROWSER=PhantomJS
+nvm use 0.10
 
 pkill -9 phantomjs;
 pkill -9 node;

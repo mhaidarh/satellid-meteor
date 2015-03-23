@@ -6,5 +6,5 @@ Feature: Authorable Home Page
 
   Scenario: Visitors can see the app heading
     Given I am a new visitor
-    When I navigate to the home page
-    Then I see the heading "Satellid"
+     When I navigate to the home page
+     Then I see the heading "Satellid"
