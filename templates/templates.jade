@@ -1,0 +1,91 @@
+template(name="container")
+  #index-banner.section.no-pad-bot
+    .container.condensed
+      +header
+      +main
+    // +footer
+
+template(name="greeter")
+  span
+    h2#greeting Hello {{name}}!
+    input#name(type="text")
+
+template(name="main")
+  +searchBar
+  +addButton
+  +collection
+
+template(name="header")  
+  h1.header.center.amber-text Satellid
+
+template(name="searchBar")
+  input.col.s9.m9.l9#search-bar(type='text', placeholder='Search your knowledge...')
+
+template(name="collection")
+  #collection.flow-text
+    +cards
+
+template(name="cards")
+  +addKnowledge
+  +editKnowledge
+  +knowledgeSample
+  +knowledgeSample
+  +knowledgeSample
+  +loadingIndicator
+
+template(name="knowledgeSample")
+  .knowledge.card-panel.blue-grey.lighten-5
+    | Knowledge Sample
+
+template(name="addKnowledge")
+  .knowledge.card-panel.blue-grey.lighten-5
+    | Add a knowledge
+    br
+    +chooseContext
+    br
+    +saveButton
+    +cancelButton
+
+template(name="chooseContext")
+  label Context
+  select
+    option(value='', disabled='', selected='') Choose context
+    option(value='cDefinition') Definition
+    option(value='cPerson') Person
+    option(value='cOrganization') Organization
+
+template(name="editKnowledge")
+  .knowledge.card-panel.blue-grey.lighten-5
+    | Edit this knowledge
+    
+template(name="addButton")
+  a#button-add.btn-large.btn-floating.waves-effect.waves-light.blue-grey.darken-4
+    i.mdi-content-add
+
+template(name="editButton")
+  a#button-edit.btn-large.btn-floating.waves-effect.waves-light.green
+    i.mdi-mode-edit
+
+template(name="deleteButton")
+  a#button-delete.btn-large.btn-floating.waves-effect.waves-light.red
+    i.mdi-mode-close
+
+template(name="saveButton")
+  a.waves-effect.waves-light.btn
+    i.mdi-save.left
+    | Save
+
+template(name="cancelButton")
+  button.btn.waves-effect.waves-red(name='cancel')
+    | Cancel
+    i.mdi-cancel.left
+
+template(name="loadingIndicator")
+  i.mdi-keyboard-control
+
+template(name="footer")
+  footer.page-footer.orange
+    .footer-copyright
+      .container
+        | Made by 
+        a.orange-text.text-lighten-3(href='http://mhaidarhanif.org') M Haidar Hanif
